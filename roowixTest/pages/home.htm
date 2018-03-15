@@ -1,0 +1,42 @@
+    <div class="row">
+        <h3>Simplify Your Links</h3>
+        <div name ="myForm" class="row no-gutters">
+
+              <div class="col-12 col-sm-6 col-md-8 form-group">
+                <input type="text" class="form-control" ng-model="urlLink" placeholder="Your Original URL Here" />
+              </div>
+              <div class="col-6 col-md-4">
+                  <a href=""   ng-click="addRow()" class="btn btn-primary">SHORTEN URL </a>
+              </div>
+
+        </div>   
+        <p>all goo.gl URLs and click analytics are public and can be accessed by anyone</p>
+    </div>
+
+
+
+    <div ng-show='links.length == 0'>
+              <span class='label label-warning'>There are no Shorten Links yet. Try one!</span>
+    </div>
+
+    <div class="row" ng-show='links.length > 0'>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Original URL</th>
+              <th scope="col">Created</th>
+              <th scope="col">Short URL</th>
+              <th scope="col">All Clicks</th>
+            </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="l in links">
+              <td scope="row"><a target="_blank" href="{{l.longUrl}}">{{l.longUrl}}</a></td>
+              <td>{{l.date | date:'MMM dd, yyyy'}}</td>
+              <td><a target="_blank" href="{{l.shortUrl}}">{{l.shortUrl}}</a></td>
+              <td>{{l.click}}</td>
+            </tr>
+
+          </tbody>
+        </table>
+    </div>
