@@ -1,0 +1,6 @@
+{
+  "name": "roowix-test on Heroku: Node.js",
+  "description": "A shortener Node.js app using Express 4",
+  "repository": "https://github.com/Ziinax/roowix-test",
+  "keywords": ["node", "express", "heroku"]
+}
