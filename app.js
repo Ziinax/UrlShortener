@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var config = require('./config');
 var base58 = require('./encoder58.js');
-var open = require ('open');
+
 
 
 // grab the url model
