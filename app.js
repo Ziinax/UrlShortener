@@ -1,9 +1,3 @@
-
-
-
-
-
-
 var express = require('express');
 var app = express();
 var path = require('path');
@@ -11,6 +5,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var config = require('./config');
 var base58 = require('./encoder58.js');
+const PORT = process.env.PORT || 3000;
+
 
 
 
@@ -139,6 +135,17 @@ app.post('/api/click', function(req, res){
 });
 
 
-var server = app.listen(3000, function(){
-    console.log('Server listening on port 3000');
+var server = app.listen(PORT, () => {
+  console.log('Server listening on: ', PORT);
 });
+
+// Create a server, uses `handleRequest` which is function that takes
+// care of providing requested data
+//const server = http.createServer(handleRequest);
+
+/*
+// Start the server
+server.listen(PORT, () => {
+  console.log('Server listening on: ', PORT);
+});
+*/
